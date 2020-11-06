@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  user: root
+  tasks:
+  - include: tasks/install_tasks.yml

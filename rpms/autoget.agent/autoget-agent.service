@@ -1,0 +1,14 @@
+[Unit]
+Description=AutoGETService
+
+[Service]
+WorkingDirectory=/opt/autoget_agent
+User=root
+Group=root
+ExecStart=/opt/autoget_agent/service.sh start
+ExecStop=/opt/autoget_agent/service.sh stop
+Type=forking
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

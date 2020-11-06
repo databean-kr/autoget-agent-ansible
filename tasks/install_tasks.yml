@@ -1,0 +1,13 @@
+---
+
+- name: Change the owner of the tmp dir to root.root and permission to 1777
+  action: shell cd /; chmod 1777 tmp
+
+- name: Bring over the autoget agent to /tmp
+  action: copy src=rpms/autoget.agent.tar.gz dest=/tmp/autoget.agent.tar.gz
+
+- name: Install the autoget agent
+  action: shell cd /tmp ; tar xvf autoget.agent.tar.gz ; cd autoget.agent ; chmod 755 *.sh ; mkdir /opt/autoget_agent -p ; cp * /opt/autoget_agent/ ; chmod 755 /opt/autoget_agent/*.sh ; cp autoget-agent.service /lib/systemd/system/ ; systemctl enable autoget-agent ; systemctl daemon-reload ; systemctl start autoget-agent ;
+
+- name: Delete the files in /tmp directory
+  action: shell cd /tmp ; rm -rf autoget.agent;

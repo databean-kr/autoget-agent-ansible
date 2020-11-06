@@ -1,0 +1,7 @@
+---
+
+- name: "Stop Autoget Agent"
+  action: shell systemctl stop autoget-agent; systemctl disable autoget-agent; systemctl daemon-reload ;
+
+- name: "Delete /opt/autoget_agent"
+  action: shell rm -rf /opt/autoget_agent ; rm -rf /lib/systemd/system/autoget-agent.service ;
