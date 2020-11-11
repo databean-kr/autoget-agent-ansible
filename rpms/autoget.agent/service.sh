@@ -25,7 +25,7 @@ function start {
    get_pid
    if [ -z $PID ]; then
       echo  "Starting agent.."
-      ./start.sh &
+      ./start.sh
       get_pid
       echo "Done. PID=$PID"
    else

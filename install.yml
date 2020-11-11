@@ -2,5 +2,12 @@
 
 - hosts: all
   user: root
+  vars_files:
+  - vars/autoget_variables.yml
   tasks:
   - include: tasks/install_tasks.yml
+  handlers:
+  - name: handler_restart_autoget_agentd
+    service:
+      name: autoget-agent
+      state: restarted

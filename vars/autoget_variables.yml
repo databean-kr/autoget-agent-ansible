@@ -1,0 +1,22 @@
+---
+# Variables/ settings specific to Zabbix
+# #
+# ## THIS FILE IS TEST MODE
+# #
+#
+#is_dev: "'zabbix-dev' in $group_names"
+#is_stage: "'zabbix-stage' in $group_names"
+#is_prod: "'zabbix-prod' in $group_names"
+autoget_server:     ec2-3-34-186-54.ap-northeast-2.compute.amazonaws.com
+agent_user:         root
+
+#
+# bad_packages:
+#- tftp-server
+#- telnet-server
+
+#add_packages:
+#- net-tools
+#- coreutils
+
+
